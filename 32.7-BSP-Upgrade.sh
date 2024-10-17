@@ -7,6 +7,8 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
+echo "Upgrading BSP!"
+
 echo "Updating all installed packages..."
 sudo apt update && sudo apt dist-upgrade -y
 
@@ -20,5 +22,4 @@ echo "Updating package list and installing nvidia-bsp-32-7..."
 sudo apt update
 sudo apt install -y -o Dpkg::Options::="--force-confdef" nvidia-bsp-32-7
 
-echo "Rebooting the system..."
-sudo reboot
+echo "Installed BSP 32.7!"
